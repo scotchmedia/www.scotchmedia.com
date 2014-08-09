@@ -48,10 +48,13 @@ module.exports = (app) ->
     # )
 
   app.proto.mailTo = () ->
-    window.location.href = "mailto:Hello@ScotchMedia.com";
+    window.location.href = "mailto:Hello@ScotchMedia.com"
 
   app.proto.changeUrl = (url) ->
     app.history.push '' + url
+
+  app.proto.externalUrl = (url) ->
+    window.location.href = url
 
   app.proto.changeUrlWithId = (url, id) ->
     app.history.push '' + url + (id if id)
