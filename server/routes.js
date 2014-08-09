@@ -5,8 +5,8 @@ var fs = require('fs');
 
 var router = express.Router();
 
-// router.all('/archive/', function(req, res, next) {
-//   res.redirect(301, '/projects/');
-// });
+router.all('/', function(req, res, next) {
+  res.redirect(307, '/tutorials');
+});
 
 module.exports = router;

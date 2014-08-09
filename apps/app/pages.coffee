@@ -10,9 +10,9 @@ module.exports = (app) ->
     # about:
     #   title: 'About'
     #   href: '/about'
-    contact:
-      title: 'Contact'
-      href: '/contact'
+    # contact:
+    #   title: 'Contact'
+    #   href: '/contact'
     # projects:
     #   title: 'Projects'
     #   href: '/projects'
@@ -37,6 +37,18 @@ module.exports = (app) ->
     msg + "\n ( " + siteUrl + url + " )"
 
   ## CONTROLLER FUNCTIONS ##
+
+  app.proto.create = (model) ->
+    # document.getElementsByTagName("a").forEach((a) ->
+    #   console.log 'a', a
+    #   a.addEventListener("click", (e) ->
+    #     console.log 'e', e
+    #     window.scrollTo 0, 0
+    #   )
+    # )
+
+  app.proto.mailTo = () ->
+    window.location.href = "mailto:Hello@ScotchMedia.com";
 
   app.proto.changeUrl = (url) ->
     app.history.push '' + url
