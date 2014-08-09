@@ -46,9 +46,8 @@ function onServerStarted(err, storage) {
   store.on('client', function(client) {
 
     // Register handler for the event called myEvent
-    client.channel.on('ping', function(start, cb) {
-      var end = new Date().getTime();
-      cb('ping duration: ' + (end - start));
+    client.channel.on('myEvent', function(start, cb) {
+      
     });
   });
 }

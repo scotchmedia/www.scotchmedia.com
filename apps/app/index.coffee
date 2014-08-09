@@ -10,6 +10,7 @@ app.use require('d-material')
 app.component require('titanjs/components/t-favicons')
 app.component require('titanjs/components/t-google-analytics')
 app.component require('titanjs/components/t-google-authorship')
+app.component require('titanjs/components/t-heroku-keep-alive')
 
 app.loadViews __dirname + '/views'
 app.loadStyles __dirname + '/styles'
