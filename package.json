@@ -11,7 +11,6 @@
     "coffee-script": "^1.7",
     "d-before-unload": "^0.1.2",
     "d-connection-alert": "^0.1.2",
-    "d-quill": "0.0.3",
     "derby": "0.6.0-alpha23",
     "derby-less": "^0.1.0",
     "derby-markdown": "^0.1.0",
@@ -20,9 +19,13 @@
     "highlight.js": "^8.1.0",
     "lodash": "^2.4.1",
     "marked": "^0.3.2",
-    "moment": "^2.7.0",
+    "moment": "^2.8.1",
     "passport-google-oauth": "*",
-    "sitemap": "^0.7.3"
+    "sitemap": "^0.7.3",
+    "titanjs": "^0.0.1"
+  },
+  "engines": {
+    "node": "0.10.x"
   },
   "author": {
     "name": "Kyle Finley",
