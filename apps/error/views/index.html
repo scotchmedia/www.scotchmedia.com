@@ -1,0 +1,53 @@
+<import: src="../../app/views/index">
+<import: src="./403">
+<import: src="./404">
+<import: src="./500">
+
+<!--
+  This is a static template file, so it doesn't have an associated app.
+  It is rendered by the server via a staticPages renderer.
+
+  Since static pages don't include the Derby client library, they can't have
+  bound variables that automatically update. However, they do support initial
+  template tag rendering from a context object and/or model.
+-->
+
+<Title:>
+  Unknown error
+
+<Head:>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <!-- <view name="t-favicons"></view> -->
+  <!-- <view name="t-google-authorship" profileId="108352401434835268542"></view> -->
+  <!-- <view name="t-google-analytics" code="UA-9421341-6" domain="justinmcclure.com" oldCode="UA-9421341-4"></view> -->
+  <link href='http://fonts.googleapis.com/css?family=Abel' rel='stylesheet' type='text/css'>
+
+  <!-- This script is needed for Chrome, which doesn't go to the server
+  to get the page when the user clicks back if using push/pop state -->
+  <script>
+    window.onpopstate = function(e) {
+      var method = e.state && e.state.$method;
+      if (!method) return;
+      if (method === 'get') {
+        window.location = window.location;
+      } else {
+        window.history.back();
+      }
+    };
+  </script>
+
+<Body:>
+  <!-- <view name="d-connection-alert"></view> -->
+  <!-- <view name="d-before-unload"></view> -->
+
+  <div id="wrap" class="site-wrapper home-layout">
+    <!-- <view name="index:header-section"></view>  -->
+    <div class="container">
+      <div id="main-content">
+        <view name="{{$render.ns}}"></view>
+      </div>
+    </div>
+  </div>
+  <!-- <view name="index:footer-section"></view>  -->
