@@ -8,7 +8,7 @@ conf = {
     // require('./apps/admin')
   ],
   middleware: [
-    require('./server/routes'),
+    // require('./server/routes'),
   ],
   schemas: require('./server/schema'), 
   config: require('./config/defaults'), 

@@ -18,4 +18,4 @@ require('./pages')(app)
 
 require './tutorials'
 require './home'
-require './contact'
+# require './contact'
