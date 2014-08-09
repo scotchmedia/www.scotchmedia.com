@@ -27,7 +27,7 @@
     "moment": "^2.8.1",
     "passport-google-oauth": "*",
     "sitemap": "^0.7.3",
-    "titanjs": "^0.0.1"
+    "titanjs": "git://github.com/titanjs/titanjs.git"
   },
   "engines": {
     "node": "0.10.x"
