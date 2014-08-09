@@ -11,6 +11,7 @@
     "coffee-script": "^1.7",
     "d-before-unload": "^0.1.2",
     "d-connection-alert": "^0.1.2",
+    "d-material": "git://github.com/kylefinley/d-material.git",
     "derby": "0.6.0-alpha23",
     "derby-less": "^0.1.0",
     "derby-markdown": "^0.1.0",
