@@ -39,12 +39,11 @@
 <index:>
   <section class="container">
     <div class="layout horizontal">
-      <aside class="flex one">
+      <aside class="SideNav flex one">
         <view name="express:authentication:toc"/>
       </aside>
 
-      <div class="flex three page-content">
-
+      <div class="PageContent flex three">
         <d-paper-button class="suggest-edit-button" icon="translate" label="Suggest Edit" fab on-click="externalUrl(_page.editUrl)"></d-paper-button>
         <view name="{{#root._page.viewName}}"/>
       </div>

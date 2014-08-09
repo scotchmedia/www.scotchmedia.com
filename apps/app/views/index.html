@@ -18,67 +18,43 @@
 
 <Body:>
   <view name="t-heroku-keep-alive"/>
-  <div class="main-container">
-    <header class="main-header">
-
+  <div class="Container">
+    <header class="Header">
       <div class="container">
         <a href="/">
           <view name="logo" id="main-logo" ariaLabel="{{_settings.site.name}}"></view>
         </a>
         <d-paper-button class="contact-button" icon="send" raised width="200px" height="36px" on-click="mailTo()" padding="16px"><span>Get in touch</span></d-paper-button>
       </div>
-      <!-- <d-core-header-panel> -->
-<!--         <header>
-          <d-core-toolbar mode="medium-short">
-            <middle>
-              <div class="left" on-click="changeUrl('/admin/')">Titan Admin</div>
-            </middle>
-          </d-core-toolbar>
-        </header>
-        <d-core-menu>
-          <d-paper-item icon="home" on-click="changeUrl('/admin/')">Home</d-paper-item>
-          <d-paper-item icon="settings" on-click="changeUrl('/admin/settings')">Settings</d-paper-item>
-          <d-paper-item icon="drive-image" on-click="changeUrl('/admin/images')">Images</d-paper-item>
-          <d-paper-item icon="drive-file" on-click="changeUrl('/admin/projects')">Projects</d-paper-item>
-          <d-paper-item icon="drive-file" on-click="changeUrl('/admin/posts')">News</d-paper-item>
-          <d-paper-item icon="drive-file" on-click="changeUrl('/admin/feeds')">Feeds</d-paper-item>
-          <d-paper-item icon="drive-file" on-click="changeUrl('/admin/endorsements')">Endorsements</d-paper-item>
-        </d-core-menu>
- -->      <!-- </d-core-header-panel> -->
-
     </header>
-    <nav class="main-nav">
+    <nav class="Nav">
       <div class="container layout horizontal">
         {{each navItems($render.ns) as #item}}
-          <li class="main-nav-item {{if #item.isCurrent}}active{{/}}">
+          <li class="Nav-item {{if #item.isCurrent}}active{{/}}">
             <a href={{#item.href}}>{{#item.title}}</a>
           </li>
         {{/each}}
       </div>
     </nav>
-    <div class="main-content">
+    <div class="Content">
       <div class="container">
         <view name="{{$render.ns}}"></view> 
       </div>
     </div>
-    <footer class="main-footer">
-      <div>
-        <div class="container top-links">
-          <div class="layout horizontal">
-            <div class="site-description flex one">
-              <view name="logo" id="footer-logo" ariaLabel="{{_settings.site.name}}"></view>
-              <p>{{_settings.site.description}}</p>
-            </div>
-            <div class="flex two">
-              <ul>
-              </ul> 
-            </div>
-          </div>
+    <footer class="Footer">
+      <div class="container layout horizontal">
+        <div class="Footer-site-description flex one">
+          <view name="logo" id="footer-logo" ariaLabel="{{_settings.site.name}}"></view>
+          <p>{{_settings.site.description}}</p>
         </div>
-        <div class="bottom-links">
-          <div class="container">
-            <small> {{copyWrite()}} </small>
-          </div>
+        <div class="flex two">
+          <ul>
+          </ul> 
+        </div>
+      </div>
+      <div class="Footer-bottom-links">
+        <div class="container">
+          <small> {{copyWrite()}} </small>
         </div>
       </div>
     </footer>
