@@ -1,4 +1,5 @@
 moment = require 'moment'
+derby = require 'derby'
 
 String::startsWith ?= (s) -> @slice(0, s.length) == s
 
@@ -37,6 +38,18 @@ module.exports = (app) ->
     msg + "\n ( " + siteUrl + url + " )"
 
   ## CONTROLLER FUNCTIONS ##
+
+  app.proto.init = (model) ->
+    # For Heroku
+    # Heroku will timeout after 59 seconds
+    # XXX this should be in app.proto.create, but create wasn't being called
+    # TODO: investigate
+    if not derby.util.isServer
+      ping = ->
+        time = new Date().getTime()
+        app.model.channel.send 'ping', time, (msg) ->
+          console.log msg
+      setInterval(ping, 30000)
 
   app.proto.create = (model) ->
     # document.getElementsByTagName("a").forEach((a) ->
