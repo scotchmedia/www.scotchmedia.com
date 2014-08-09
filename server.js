@@ -1,8 +1,6 @@
 require('coffee-script/register');
 
 var titan = require('titanjs');
-var env = process.env.NODE_ENV;
-console.log("env", env);
 
 conf = {
   apps: [
@@ -15,7 +13,7 @@ conf = {
   schemas: require('./server/schema'), 
   config: [
     require('./config/defaults'), 
-    require('./config/' + env)
+    require('./config/' + process.env.NODE_ENV)
   ],
   // loginConfig: require('./config/login'),
   publicDir: process.cwd() + '/public', 
