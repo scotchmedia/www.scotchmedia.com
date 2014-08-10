@@ -14,11 +14,12 @@
 
 ##### Section 3: Users & Accounts
 1. [Using the Accounts API]
-1. [Creating Flash Messages]
+1. Creating Flash Messages
+1. Modifying the Accounts API
 
 ##### Section 4: Creating an admin section
-* [Admin Section][]
-* [WYSIHTML5 Integration][]
+* Admin Section
+* WYSIHTML5 Integration
 
 
 [Overview]:                           /tutorials/meteor/blog/1/01
