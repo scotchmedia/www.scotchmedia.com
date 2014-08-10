@@ -11,6 +11,7 @@ app.use require('d-material')
 app.component require('d-connection-alert')
 app.component require('d-before-unload')
 
+app.component require('titanjs/components/t-disqus-comments')
 app.component require('titanjs/components/t-favicons')
 app.component require('titanjs/components/t-google-analytics')
 app.component require('titanjs/components/t-google-authorship')
