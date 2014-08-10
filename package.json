@@ -16,7 +16,7 @@
     "d-before-unload": "^0.1.2",
     "d-connection-alert": "^0.1.2",
     "d-material": "git://github.com/kylefinley/d-material.git",
-    "derby": "git://github.com/derbjs/derby.git",
+    "derby": "git://github.com/derbyjs/derby.git",
     "derby-less": "^0.1.0",
     "derby-markdown": "^0.1.0",
     "derby-stylus": "^0.1.0",
