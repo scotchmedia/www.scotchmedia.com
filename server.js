@@ -13,7 +13,7 @@ conf = {
   schemas: require('./server/schema'), 
   config: [
     require('./config/defaults'), 
-    require('./config/' + process.env.NODE_ENV)
+    require('./config/' + (process.env.NODE_ENV || 'development'))
   ],
   // loginConfig: require('./config/login'),
   publicDir: process.cwd() + '/public', 
