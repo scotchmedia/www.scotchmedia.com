@@ -17,7 +17,7 @@ conf = {
   ],
   // loginConfig: require('./config/login'),
   publicDir: process.cwd() + '/public', 
-  // errorMiddleware: require('./server/error'),
+  errorMiddleware: require('./server/error'),
 };
 
 titan.run(conf, onServerStarted);
