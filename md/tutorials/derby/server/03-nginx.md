@@ -196,8 +196,8 @@ nginx -t
 
 ### Resources
 
-[How to install and configure SPDY on Nginx](http://www.nginxtips.com/how-to-install-and-configure-spdy-on-nginx/)
-[Digital Ocean: How To Set Up Multiple SSL Certificates on One IP with Nginx on Ubuntu 12.04](https://www.digitalocean.com/community/tutorials/how-to-set-up-multiple-ssl-certificates-on-one-ip-with-nginx-on-ubuntu-12-04)
-[Nginx Pitfalls](http://wiki.nginx.org/Pitfalls)
-[Nginx Quickstart](http://wiki.nginx.org/QuickStart)
-[Nginx Configuration](http://wiki.nginx.org/Configuration)
+- [How to install and configure SPDY on Nginx](http://www.nginxtips.com/how-to-install-and-configure-spdy-on-nginx/)
+- [Digital Ocean: How To Set Up Multiple SSL Certificates on One IP with Nginx on Ubuntu 12.04](https://www.digitalocean.com/community/tutorials/how-to-set-up-multiple-ssl-certificates-on-one-ip-with-nginx-on-ubuntu-12-04)
+- [Nginx Pitfalls](http://wiki.nginx.org/Pitfalls)
+- [Nginx Quickstart](http://wiki.nginx.org/QuickStart)
+- [Nginx Configuration](http://wiki.nginx.org/Configuration)
