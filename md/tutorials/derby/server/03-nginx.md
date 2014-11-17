@@ -38,7 +38,7 @@ mkdir -p /etc/nginx/ssl
 cp www.example.com/* /etc/nginx/ssl
 ```
 
-4. Firefox complains if we don't change the certs 
+4. Firefox complains if we don't provide the intermediate CA certificate
 
 ```
 curl https://www.startssl.com/certs/sub.class1.server.ca.pem >>/etc/nginx/ssl/www.example.com.crt
