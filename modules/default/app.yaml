@@ -1,0 +1,90 @@
+application: sm-host
+module: default
+version: v1-0-0
+runtime: go
+api_version: go1
+instance_class: F1
+default_expiration: "1m"
+
+automatic_scaling:
+  # min_idle_instances: 5
+  max_idle_instances: automatic  # default value
+  min_pending_latency: automatic  # default value
+  max_pending_latency: 500ms
+  max_concurrent_requests: 50
+
+skip_files:
+- ^(.*/)?app\.yaml
+- ^(.*/)?app\.yml
+- ^(.*/)?index\.yaml
+- ^(.*/)?index\.yml
+- ^(.*/)?#.*#
+- ^(.*/)?.*~
+- ^(.*/)?.*\.py[co]
+- ^(.*/)?.*/RCS/.*
+- ^(.*/)?\..*
+- ^(.*/)?.*\.bak$
+- ^README\..*
+- \.gitignore
+- ^\.git/.*
+- ^node_modules/(.*/)?
+
+handlers:
+- url: /(favicon.ico|favicon.png)
+  mime_type: image/png
+  static_files: static/favicon.ico
+  upload: static/favicon.ico
+
+# - url: /(favicon.*\.png|apple-icon.*\.png|apple-touch-icon.*\.png|android-icon.*\.png|ms-icon.*\.png)
+#   mime_type: image/png
+#   static_files: static/favicon-large.png
+#   upload: static/favicon-large.png
+
+- url: /(.*)\.png
+  mime_type: image/png
+  static_files: static/\1.png
+  upload: static/(.*).png
+
+- url: /audio/(.*)
+  mime_type: audio/mpeg
+  static_files: static/audio/\1
+  upload: static/audio/(.*)
+
+- url: /(css|js|img|font|prod)/(.*)
+  static_files: static/\1/\2
+  upload: static/(css|js|img|font|prod)/(.*)
+
+- url: /(browserconfig\.xml|manifest\.json|robots\.txt|humans\.txt|crossdomain\.xml|.+\.html)
+  static_files: static/\1
+  upload: static/(browserconfig\.xml|manifest\.json|robots\.txt|humans\.txt|crossdomain\.xml|.+\.html)
+
+- url: /admin/.*
+  script: _go_app
+  login: admin
+
+- url: /_/v1/task/unzip
+  script: _go_app
+  login: admin
+
+- url: /.*
+  script: _go_app
+  # login: admin
+
+- url: /_ah/remote_api
+  script: _go_app
+  login: admin
+
+# - url: /_ah/queue/go/delay
+#   script: _go_app
+#   login: admin
+
+# error_handlers:
+#   # Only errors with error_code, don't put a default error here
+#   - error_code: over_quota
+#     file: static/errors/over_quota.html
+
+#   - error_code: dos_api_denial
+#     file: static/errors/dos_api_denial.html
+
+#   - error_code: timeout
+#     file: static/errors/timeout.html

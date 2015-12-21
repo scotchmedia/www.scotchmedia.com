@@ -1,0 +1,110 @@
+@color-primary: #222;
+@color-secondary: #6d52da;
+@color-button: #fff;
+@color-border: rgba(255, 255, 255, .6);
+
+::-webkit-input-placeholder {
+  color: rgba(0, 0, 0, 0.5);
+}
+
+:-moz-placeholder {
+  color: rgba(0, 0, 0, 0.5);
+}
+
+::-moz-placeholder {
+  color: rgba(0, 0, 0, 0.5);
+}
+
+:-ms-input-placeholder {
+  color: rgba(0, 0, 0, 0.5);
+}
+
+.Search {
+  ::-webkit-input-placeholder {
+    color: rgba(255, 255, 255, 0.5);
+  }
+
+  :-moz-placeholder {
+    color: rgba(255, 255, 255, 0.5);
+  }
+
+  ::-moz-placeholder {
+    color: rgba(255, 255, 255, 0.5);
+  }
+
+  :-ms-input-placeholder {
+    color: rgba(255, 255, 255, 0.5);
+  }
+}
+
+.Error {
+  color: #cd2738;
+}
+
+textarea {
+  outline: none;
+  resize: vertical;
+  min-height: 124;
+}
+
+input,
+textarea {
+  box-sizing: border-box;
+  outline: none;
+  color: @color-primary;
+}
+
+.Input {
+  // padding: 8px 8px;
+  // margin-bottom: 5px;
+  // display: block;
+  border: 0px solid @color-border;
+  font-family: "MuseoSans", "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+  font-size: 13px;
+  background-color: rgba(255, 255, 255, .3);
+  // border-radius: .5rem;
+  width: 100%;
+
+  &:active, &:focus {
+    outline: none;
+    color: @color-primary;
+    background-color: rgba(255, 255, 255, .4);
+
+    &::-webkit-input-placeholder {
+      color: rgba(255, 255, 255, .7);
+    }
+
+    &:-moz-placeholder {
+      color: rgba(255, 255, 255, .7);
+    }
+
+    &::-moz-placeholder {
+      color: rgba(255, 255, 255, .7);
+    }
+
+    &:-ms-input-placeholder {
+      color: rgba(255, 255, 255, .7);
+    }
+  }
+}
+
+.Button {
+  // flex: 1;
+  // padding: 8px 8px;
+  // height: 30px;
+  // display: inline-block;
+  // color: #fff;
+  // background: @color-primary;
+  // cursor: pointer;
+  // outline: none;
+  // border: 0px solid @color-border;
+  // font-family: "MuseoSans", "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+  // font-size: 13px;
+  // border-radius: .5rem;
+  // -webkit-appearance: none;
+  // transition: all 0.3s ease 0s;
+  // &:hover, &:active, &:focus {
+  //   background: #fff;
+  //   color: @color-primary;
+  // }
+}
