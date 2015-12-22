@@ -233,10 +233,10 @@ export default class Home extends React.Component {
     page: 'home',
   }
 
-  renderLink(link) {
+  renderLink(link, i) {
     return (
-      <li style={styles.li}>
-        <a href={link.url}>{link.title}</a>
+      <li key={'key_' + link + i} style={styles.li}>
+        <a target="_blank" href={link.url}>{link.title}</a>
       </li>
     );
   }
@@ -250,7 +250,6 @@ export default class Home extends React.Component {
           </h3>
         </header>
         <a style={styles.contactLink} href="https://github.com/scotch">Github</a>
-        <a style={styles.contactLink} href="tel:316-730-1139">(316) 730 1139</a>
       </secton>
     );
   }
@@ -268,7 +267,7 @@ export default class Home extends React.Component {
     const os = osLinks.map(this.renderLink);
     const pLinks = [
       {title: 'Title Farm', url: 'https://titlefarm.com'},
-      {title: 'Vibereel', url: 'https://vibereel.com'},
+      {title: 'Vibereel', url: 'http://vibereel.com'},
     ];
     const projects = pLinks.map(this.renderLink);
 

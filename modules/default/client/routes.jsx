@@ -28,9 +28,8 @@ export default (
 
     <Route path="tutorials" renderFailure={() => <NotFound />}>
       <IndexRoute component={TutorialIndex} />
-      <Route path="*" component={TutorialDetail} queries={ViewerQueries} />
+      <Route path=":category/:book/:chapter/:page" component={TutorialDetail} queries={ViewerQueries} />
     </Route>
-
     <Route path="*" component={NotFound} />
   </Route>
 );

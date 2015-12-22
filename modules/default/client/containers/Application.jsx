@@ -4,49 +4,143 @@ import GoogleAnalytics from 'react-g-analytics';
 import Link from '../components/Link';
 import Styles from '../config/Styles';
 
-const siteDescription = 'An interactive media studio, specialzing in user interface design, graphic design, and web development';
+const siteDescription = 'An interactive media studio, specialzing in user interface design, graphic design, iOS development, Android development and web development';
 
 const styles = {
   container: {
     width: '100%',
-    height: '100vh',
-    fontFamily: '"HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif',
-    fontWeight: 100,
-    backgroundColor: '#fefefe',
-    // backgroundAttachment: 'fixed',
-    marginLeft: 8,
-    marginRight: 8,
-    // backgroundPosition: 'top center',
-    // backgroundImage: 'url(/img/bg-farm-tall.jpg)',
-    // backgroundSize: '100% auto',
-    // backgroundRepeat: 'no-repeat',
+    minHeight: '100%',
+    display: 'flex',
+    flexDirection: 'column',
     transition: '200ms ease-in',
   },
   inner: {
-    width: '100%',
-    [Styles.media.large]: {
-      maxWidth: 1180,
+    // width: '100%',
+    display: 'flex',
+    // flex: 1,
+    padding: 16,
+    [Styles.media.medium]: {
       margin: '0 auto',
+    },
+    [Styles.media.large]: {
+      // maxWidth: 1180,
+      margin: '0 auto',
+      width: 1180,
+      // alignContent: 'center',
+      padding: 0,
     },
   },
   header: {
     container: {
-
+      backgroundColor: Styles.header.backgroundColor,
+    },
+    inner: {
+      flexDirection: 'column',
     },
     top: {
       display: 'flex',
-      flexDirection: 'row',
+      flexDirection: 'column',
+      marginTop: 16,
       marginBottom: 16,
+      [Styles.media.medium]: {
+        flexDirection: 'row',
+      },
+      [Styles.media.large]: {
+        flexDirection: 'row',
+      },
     },
     logo: {
-      display: 'flex',
-      flex: 1,
+      container: {
+        display: 'flex',
+        flex: 1,
+        aignContent: 'center',
+        [Styles.media.medium]: {
+          justifyContent: 'flex-start',
+        },
+        [Styles.media.large]: {
+          justifyContent: 'flex-start',
+        },
+      },
+      logo: {
+        width: 280,
+        fill: Styles.colors.offWhite,
+      },
     },
     email: {
       display: 'flex',
       alignSelf: 'center',
     },
   },
+  nav: {
+    container: {
+      display: 'flex',
+      listStyleType: 'none',
+      // maxHeight: 20,
+      flexDirection: 'row',
+      paddingTop: 16,
+      paddingBottom: 16,
+      justifyContent: 'center',
+      [Styles.media.medium]: {
+        justifyContent: 'flex-start',
+      },
+      [Styles.media.large]: {
+        justifyContent: 'flex-start',
+      },
+    },
+  },
+  content: {
+    container: {
+      display: 'flex',
+      flex: 1,
+      // justifyContent: 'center',
+    },
+  },
+  footer: {
+    container: {
+      paddingTop: 22,
+      display: 'flex',
+      flexDirection: 'column',
+      color: Styles.colors.glt50,
+      backgroundColor: Styles.colors.glt10,
+      justifyContent: 'center',
+    },
+    inner: {
+      display: 'flex',
+      flexDirection: 'column',
+      [Styles.media.medium]: {
+        flexDirection: 'row',
+      },
+      [Styles.media.large]: {
+        flexDirection: 'row',
+      },
+    },
+    logo: {
+      width: 200,
+      fill: Styles.colors.glt70,
+    },
+    copy: {
+      fontSize: 12,
+      backgroundColor: Styles.colors.glt10,
+      color: Styles.colors.glt40,
+      paddingTop: 16,
+      paddingBottom: 16,
+      // justifyContent: 'center',
+      // alignItems: 'center',
+      // textAlign: 'center',
+    },
+    group: {
+      display: 'flex',
+      alignItems: 'center',
+      flexDirection: 'column',
+      flex: 1,
+      [Styles.media.medium]: {
+        alignItems: 'flex-start',
+      },
+      [Styles.media.large]: {
+        alignItems: 'flex-start',
+      },
+    },
+  }
 };
 
 @Radium
@@ -109,50 +203,48 @@ export default class Application extends React.Component {
       );
     })
     return (
-      <div className="Container">
-        <header style={styles.header.container} className="Header">
-          <div style={styles.inner}>
+      <div style={styles.container}>
+        <header style={styles.header.container}>
+          <div style={[styles.inner, styles.header.inner]}>
             <div style={styles.header.top}>
-              <a style={styles.header.logo} href="/">{this.renderLogo('logo', 'main-logo', 'Scotch Media')}</a>
+              <a style={styles.header.logo.container} href="/">{this.renderLogo(styles.header.logo.logo, 'main-logo', 'Scotch Media')}</a>
               <a style={styles.header.email} href="mailto:hello@scotchmedia.com"> hello@scotchmedia.com </a>
             </div>
-            <nav className="Nav">
+            <nav style={styles.nav.container}>
               {nav}
             </nav>
           </div>
         </header>
-        <div className="Content">
-          <div className="container">
+        <div style={styles.content.container}>
+          <div style={styles.inner}>
             {children}
           </div>
         </div>
-        <footer className="Footer">
-          <div className="container">
-            <div className="Footer-topLinks layout horizontal">
-              <div className="Footer-siteDescription flex one">
-                {this.renderLogo('logo', 'footer-logo', 'Scotch Media')}
-                <p>{siteDescription}</p>
-              </div>
-              <div className="flex two">
-                <ul>
-                </ul>
-              </div>
+        <footer style={styles.footer.container}>
+          <div style={[styles.inner, styles.footer.inner]}>
+            <div style={styles.footer.group}>
+              {this.renderLogo(styles.footer.logo, 'footer-logo', 'Scotch Media')}
+              <p>{siteDescription}</p>
+            </div>
+            <div style={styles.footer.group}>
+            </div>
+            <div style={styles.footer.group}>
             </div>
           </div>
-          <div className="Footer-bottomLinks">
-            <div className="container">
+          <div style={styles.footer.copy}>
+            <div style={[styles.inner, {justifyContent: 'center'}]}>
               <small>{`© ${new Date().getFullYear()} ScotchMedia.com. All rights reserved`}</small>
             </div>
           </div>
-            <GoogleAnalytics id="UA-28149225-1" />
+          <GoogleAnalytics id="UA-28149225-1" />
         </footer>
       </div>
     );
   }
 
-  renderLogo(className, id, ariaLabel) {
+  renderLogo(style, color, id, ariaLabel) {
     return (
-        <svg version="1.1" id={id} class={className} aria-label={ariaLabel} x="0px" y="0px" width="406.859px" height="62.087px" viewBox="0 0 406.859 62.087">
+      <svg id={id} style={style} aria-label={ariaLabel} x="0px" y="0px" width="406.859px" height="62.087px" viewBox="0 0 406.859 62.087">
         <g>
           <path d="M45.439,23.92c-3.155,0-5.545-1.533-5.545-4.118c0-2.866,2.103-3.729,2.103-5.932
             c0-2.195-1.818-5.547-6.312-5.547c-5.166,0-10.429,3.061-10.429,7.85c0,4.109,2.011,6.983,8.705,12.144l1.915,1.532
