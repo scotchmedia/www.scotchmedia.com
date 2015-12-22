@@ -6,7 +6,7 @@
   "main": "index.js",
   "scripts": {
     "start": "node ./scripts/devServer.js",
-    "dev": "node ./scripts/devServer.js",
+    "dev": "npm run update-schema && node ./scripts/devServer.js",
     "build": "NODE_ENV=PRODUCTION node scripts/build.js",
     "deploy": "npm run build && goapp deploy",
     "update-schema": "cd scripts && go run ./updateSchema.go",
@@ -30,6 +30,7 @@
     "immstruct": "^2.0.0",
     "immutable": "^3.7.5",
     "isomorphic-fetch": "^2.2.0",
+    "json-loader": "^0.5.4",
     "lodash": "^3.10.1",
     "moment": "^2.10.6",
     "radium": "^0.15.3",
