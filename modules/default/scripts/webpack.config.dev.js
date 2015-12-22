@@ -35,6 +35,7 @@ module.exports = {
     root: [path.join(__dirname, '../node_modules')],
   },
   module: {
+    noParse: /autoit\.js$/,
     loaders: [
       { test: /\.css$/, loader: 'style!css' },
       { test: /\.styl$/,
