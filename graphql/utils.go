@@ -1,6 +1,8 @@
 package graphql
 
 import (
+	"crypto/md5"
+	"encoding/hex"
 	"net/http"
 
 	"golang.org/x/net/context"
@@ -36,4 +38,10 @@ func getReq(rootValue interface{}) (*http.Request, context.Context, *User) {
 		}
 	}
 	return r, c, u
+}
+
+func hash(str string) string {
+	hasher := md5.New()
+	hasher.Write([]byte(str))
+	return hex.EncodeToString(hasher.Sum(nil))
 }
