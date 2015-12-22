@@ -1,0 +1,42 @@
+{
+  "title": "Managing User Accounts",
+  "chapters": [
+    {
+      "title": "Getting Started",
+      "pages": [
+        { "title": "Overview", "url": "/tutorials/express/authentication/1/01" },
+        { "title": "Creating an express app", "url": "/tutorials/express/authentication/1/02" },
+        { "title": "Testing with mocha", "url": "/tutorials/express/authentication/1/03" },
+        { "title": "Setting up mongodb", "url": "/tutorials/express/authentication/1/04" },
+        { "title": "Mongoose Config", "url": "/tutorials/express/authentication/1/05" },
+        { "title": "Mongoose Testing", "url": "/tutorials/express/authentication/1/06" },
+        { "title": "Mongoose Models", "url": "/tutorials/express/authentication/1/07" },
+        { "title": "Homework", "url": "/tutorials/express/authentication/1/08 }" }
+      ]
+    }, {
+      "title": "Authentication",
+      "pages": [
+        { "title": "Password Hashing", "url": "/tutorials/express/authentication/2/01" },
+        { "title": "Acceptance testing with supertest", "url": "/tutorials/express/authentication/2/02" },
+        { "title": "User signup", "url": "/tutorials/express/authentication/2/03" },
+        { "title": "Passport Integration", "url": "/tutorials/express/authentication/2/04" },
+        { "title": "Authenticated Routes", "url": "/tutorials/express/authentication/2/05" },
+        { "title": "Homework", "url": "/tutorials/express/authentication/2/06" }
+      ]
+    }, {
+      "title": "Password Reset",
+      "pages": [
+        { "title": "Creating User Tokens", "url": "/tutorials/express/authentication/3/01" },
+        { "title": "Sending Email with nodemailer", "url": "/tutorials/express/authentication/3/02" },
+        { "title": "Password Recovery", "url": "/tutorials/express/authentication/3/03" },
+        { "title": "Homework", "url": "/tutorials/express/authentication/3/04" }
+      ]
+    }, {
+      "title": "Deployment",
+      "pages": [
+        { "title": "Heroku Deploy", "url": "/tutorials/express/authentication/6/01" },
+        { "title": "Appfog Deploy", "url": "/tutorials/express/authentication/6/02" }
+      ]
+    }
+  ]
+}
