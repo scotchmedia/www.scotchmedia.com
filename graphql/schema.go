@@ -47,16 +47,16 @@ func init() {
 	idFetcher := func(obj interface{}, info graphql.ResolveInfo) string {
 		switch obj := obj.(type) {
 		case *Chapter:
-			return fmt.Sprintf("c_%v", hash(obj.Title))
+			return fmt.Sprintf("c_%s", hash(obj.Title))
 		case *Book:
-			return fmt.Sprintf("b_%v", hash(obj.Title))
+			return fmt.Sprintf("b_%s", hash(obj.Title))
 		case *Page:
 			if obj.ID != "" {
-				return fmt.Sprintf("p_%v", obj.ID)
+				return fmt.Sprintf("p_%s", obj.ID)
 			}
-			return fmt.Sprintf("p_%v", hash(obj.URL))
+			return fmt.Sprintf("p_%s", hash(obj.URL))
 		}
-		return fmt.Sprintf("%v", obj)
+		return fmt.Sprintf("%v", hash(fmt.Sprintf("%#v", obj)))
 	}
 
 	pageType = graphql.NewObject(graphql.ObjectConfig{
