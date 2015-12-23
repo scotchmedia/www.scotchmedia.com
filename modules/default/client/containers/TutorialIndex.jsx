@@ -12,7 +12,6 @@ const styles = {
 export default class TutorialIndex extends React.Component {
   static propTypes = {
     history: React.PropTypes.object.isRequired,
-    viewer: React.PropTypes.object.isRequired,
   }
 
   state = {
