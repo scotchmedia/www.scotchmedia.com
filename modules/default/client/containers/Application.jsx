@@ -17,9 +17,12 @@ const styles = {
   inner: {
     // width: '100%',
     display: 'flex',
-    // flex: 1,
     padding: 16,
+    [Styles.media.small]: {
+      flex: 1,
+    },
     [Styles.media.medium]: {
+      flex: 1,
       margin: '0 auto',
     },
     [Styles.media.large]: {
@@ -53,7 +56,7 @@ const styles = {
       container: {
         display: 'flex',
         flex: 1,
-        aignContent: 'center',
+        justifyContent: 'center',
         [Styles.media.medium]: {
           justifyContent: 'flex-start',
         },
@@ -63,12 +66,16 @@ const styles = {
       },
       logo: {
         width: 280,
+        height: 'auto',
         fill: Styles.colors.offWhite,
       },
     },
     email: {
       display: 'flex',
       alignSelf: 'center',
+      ':hover': {
+        color: Styles.colors.white,
+      },
     },
   },
   nav: {
@@ -115,7 +122,8 @@ const styles = {
       },
     },
     logo: {
-      width: 200,
+      maxWidth: 200,
+      height: 'auto',
       fill: Styles.colors.glt70,
     },
     copy: {
@@ -132,11 +140,12 @@ const styles = {
       display: 'flex',
       alignItems: 'center',
       flexDirection: 'column',
-      flex: 1,
       [Styles.media.medium]: {
+        flex: 1,
         alignItems: 'flex-start',
       },
       [Styles.media.large]: {
+        flex: 1,
         alignItems: 'flex-start',
       },
     },

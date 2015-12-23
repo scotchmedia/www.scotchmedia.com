@@ -28,7 +28,7 @@ const styles = {
       display: 'flex',
       padding: 10,
       [Styles.media.small]: {
-        flex: 1,
+        // flex: 1,
       },
       [Styles.media.medium]: {
         width: 280,
