@@ -150,7 +150,8 @@ class TutorialDetail extends React.Component {
   render() {
     // const editUrl = "https://github.com/scotchmedia/www.scotchmedia.com/blob/master/md/tutorials/meteor/#{p.book}/#{p.chapter}/#{p.section}.md"
     const { viewer } = this.props;
-
+    const url = window.location.href;
+    console.log(`url:`, url);
     return (
       <div style={styles.container}>
         <div style={styles.inner}>
@@ -162,6 +163,7 @@ class TutorialDetail extends React.Component {
             <h3>Comments</h3>
             <ReactDisqusThread
               shortname="scotchmedia"
+              url={url}
               />
           </div>
         </div>
