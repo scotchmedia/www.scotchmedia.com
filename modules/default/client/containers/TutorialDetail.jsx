@@ -97,22 +97,47 @@ const styles = {
 class TutorialDetail extends React.Component {
   static propTypes = {
     history: React.PropTypes.object.isRequired,
+    params: React.PropTypes.object.isRequired,
     viewer: React.PropTypes.object.isRequired,
   }
 
-  state = {
-    page: 'home',
+  constructor(props) {
+    super(props);
+    this.setTitle();
+    this.state = {
+      page: 'home',
+    };
+  }
+
+  componentDidUpdate() {
+    this.setTitle();
   }
 
   onEdit(e) {
     console.log(`edit:`, e);
   }
 
+  setTitle() {
+    const { toc } = this.props.viewer.page;
+    const { params } = this.props;
+    let t = '';
+    try {
+      const chapter = parseInt(params.chapter, 10) - 1;
+      const page = parseInt(params.page, 10) - 1;
+      const c = toc.chapters[chapter];
+      const p = c.pages[page];
+      t = `${p.title} > ${c.title} > ${toc.title}`;
+    } catch (e) {
+      console.log(`e:`, e);
+    }
+    document.title = t + ' - Scotch Media Tutorials';
+  }
+
   renderNav() {
     const { viewer } = this.props;
-    console.log(`viewer:`, viewer);
+    // console.log(`viewer:`, viewer);
     const toc = viewer.page.toc;
-    console.log(`toc:`, toc);
+    // console.log(`toc:`, toc);
     return (
       <nav style={styles.nav}>
         <h3 style={styles.toc.header}> {toc.title} </h3>
@@ -135,23 +160,22 @@ class TutorialDetail extends React.Component {
                         {p.title}
                       </Link>
                     </li>
-                  )
+                  );
                 })
                 }
               </ol>
             </div>
-          )
+          );
         })
       }
       </nav>
-    )
+    );
   }
 
   render() {
     // const editUrl = "https://github.com/scotchmedia/www.scotchmedia.com/blob/master/md/tutorials/meteor/#{p.book}/#{p.chapter}/#{p.section}.md"
     const { viewer } = this.props;
     const url = window.location.href;
-    console.log(`url:`, url);
     return (
       <div style={styles.container}>
         <div style={styles.inner}>
