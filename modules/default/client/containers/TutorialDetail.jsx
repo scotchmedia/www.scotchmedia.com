@@ -65,7 +65,7 @@ const styles = {
     },
     active: {
       color: Styles.colors.accent1,
-    }
+    },
   },
   content: {
     container: {
@@ -126,7 +126,11 @@ class TutorialDetail extends React.Component {
       const page = parseInt(params.page, 10) - 1;
       const c = toc.chapters[chapter];
       const p = c.pages[page];
-      t = `${p.title} > ${c.title} > ${toc.title}`;
+      let book = 'Express Auth';
+      if (params.category === 'meteor') {
+        book = 'Meteor Blog';
+      }
+      t = `${p.title} > ${c.title} > ${toc.title} > ${book}`;
     } catch (e) {
       console.log(`e:`, e);
     }
