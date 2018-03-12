@@ -5,6 +5,7 @@ import (
 
 	"github.com/graphql-go/graphql"
 	"github.com/graphql-go/relay"
+	"golang.org/x/net/context"
 	"google.golang.org/appengine/log"
 )
 
@@ -20,20 +21,20 @@ var Schema graphql.Schema
 func init() {
 
 	nodeDefinitions = relay.NewNodeDefinitions(relay.NodeDefinitionsConfig{
-		IDFetcher: func(id string, info graphql.ResolveInfo) interface{} {
+		IDFetcher: func(id string, info graphql.ResolveInfo, ctx context.Context) (interface{}, error) {
 			resolvedID := relay.FromGlobalID(id)
 			_, c, _ := getReq(info.RootValue)
 			log.Infof(c, `:: ID FETCHER - [%v] ::`, resolvedID)
 			if resolvedID.Type == "Viewer" {
-				return GetViewer()
+				return GetViewer(), nil
 			}
 			if resolvedID.Type == "Page" {
-				return GetPageByID(c, resolvedID.ID)
+				return GetPageByID(c, resolvedID.ID), nil
 			}
-			return nil
+			return "", nil
 		},
-		TypeResolve: func(value interface{}, info graphql.ResolveInfo) *graphql.Object {
-			switch value.(type) {
+		TypeResolve: func(p graphql.ResolveTypeParams) *graphql.Object {
+			switch p.Value.(type) {
 			case *Viewer:
 				return viewerType
 			case *Page:
@@ -44,19 +45,20 @@ func init() {
 		},
 	})
 
-	idFetcher := func(obj interface{}, info graphql.ResolveInfo) string {
+	var idFetcher relay.GlobalIDFetcherFn
+	idFetcher = func(obj interface{}, info graphql.ResolveInfo, ctx context.Context) (string, error) {
 		switch obj := obj.(type) {
 		case *Chapter:
-			return fmt.Sprintf("c_%s", hash(obj.Title))
+			return fmt.Sprintf("c_%s", hash(obj.Title)), nil
 		case *Book:
-			return fmt.Sprintf("b_%s", hash(obj.Title))
+			return fmt.Sprintf("b_%s", hash(obj.Title)), nil
 		case *Page:
 			if obj.ID != "" {
-				return fmt.Sprintf("p_%s", obj.ID)
+				return fmt.Sprintf("p_%s", obj.ID), nil
 			}
-			return fmt.Sprintf("p_%s", hash(obj.URL))
+			return fmt.Sprintf("p_%s", hash(obj.URL)), nil
 		}
-		return fmt.Sprintf("%v", hash(fmt.Sprintf("%#v", obj)))
+		return fmt.Sprintf("%v", hash(fmt.Sprintf("%#v", obj))), nil
 	}
 
 	pageType = graphql.NewObject(graphql.ObjectConfig{

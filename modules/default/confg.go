@@ -1,4 +1,4 @@
-package server
+package main
 
 const (
 	siteDomain  = "http://scotchmedia.com"
