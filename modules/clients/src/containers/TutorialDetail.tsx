@@ -11,14 +11,10 @@ interface Props {
 }
 
 export default withRouteData(({ toc, title, content }: Props) => (
-  <div>
-    <Head>
-      <title>{title}</title>
-    </Head>
-    <TutorialDetailLayout
-      toc={toc}
-      pageUrl={title}
-      pageContent={content}
-    />
-  </div>
+  <TutorialDetailLayout
+    toc={toc}
+    pageUrl={title}
+    pageTitle={title}
+    pageContent={content}
+  />
 ))

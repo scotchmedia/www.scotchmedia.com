@@ -1,7 +1,5 @@
 import React from 'react';
-// import Styles from '../config/Styles';
-import { Link } from 'react-static'
-// import Link from '../components/Link';
+import { Head, Link } from 'react-static';
 
 export default class TutorialIndex extends React.Component {
 
@@ -12,6 +10,9 @@ export default class TutorialIndex extends React.Component {
   render() {
     return (
       <div>
+        <Head>
+          <title>{this.props.pageTitle}</title>
+        </Head>
         <h1>Tutorials</h1>
 
         <h3>Express</h3>

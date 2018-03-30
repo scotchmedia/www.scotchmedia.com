@@ -1,10 +1,9 @@
 import Highlight from 'react-highlight';
 import React from 'react';
-// import ReactDisqusThread from 'react-disqus-thread';
 import ReactDisqusComments from 'react-disqus-comments';
-
 import Styles from '../config/Styles';
 import { css } from 'glamor';
+import { Head } from 'react-static';
 import { Link } from 'react-static';
 
 
@@ -156,7 +155,7 @@ class TutorialDetail extends React.Component<Props, State> {
   render() {
     const {
       pageContent,
-      // pageUrl,
+      pageTitle,
     } = this.props;
     // const editUrl = "https://github.com/scotchmedia/www.scotchmedia.com/blob/master/md/tutorials/meteor/#{p.book}/#{p.chapter}/#{p.section}.md"
     // const { viewer } = this.props;
@@ -167,6 +166,9 @@ class TutorialDetail extends React.Component<Props, State> {
     }
     return (
       <div className={styles.container}>
+        <Head>
+          <title>{pageTitle}</title>
+        </Head>
         <div className={styles.inner}>
           <aside className={styles.aside.container}>
             {this.renderNav()}

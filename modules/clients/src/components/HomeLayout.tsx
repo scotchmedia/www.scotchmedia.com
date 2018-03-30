@@ -1,5 +1,6 @@
 import React from 'react';
 import { css } from 'glamor';
+import { Head } from 'react-static';
 
 
 // const menuMaxWidth = 300;
@@ -58,6 +59,9 @@ export default class Home extends React.Component {
 
     return (
       <div className={styles.container}>
+        <Head>
+          <title>Scotch Media</title>
+        </Head>
         <h3 className={styles.subheader}>
           Recent Projects
         </h3>
