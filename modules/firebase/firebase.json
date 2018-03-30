@@ -1,0 +1,33 @@
+{
+  "hosting": {
+    "public": "public",
+    "ignore": [
+      "firebase.json",
+      "**/.*",
+      "**/node_modules/**"
+    ],
+    "redirects": [
+      {
+        "source": "/tutorials/express",
+        "destination": "/tutorials/express/authentication/1/01",
+        "type": 302
+      },
+      {
+        "source": "/tutorials/express/authentication",
+        "destination": "/tutorials/express/authentication/1/01",
+        "type": 302
+      },
+      {
+        "source": "/tutorials/meteor",
+        "destination": "/tutorials/meteor/blog/1/01",
+        "type": 302
+      },
+      {
+        "source": "/tutorials/meteor/blog",
+        "destination": "/tutorials/meteor/blog/1/01",
+        "type": 302
+      }
+    ],
+    "cleanUrls": true
+  }
+}

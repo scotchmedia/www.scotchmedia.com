@@ -1,0 +1,56 @@
+{
+  "title": "Creating a Blog",
+  "chapters": [
+    {
+      "title": "Getting Started",
+      "pages": [
+        {
+          "title": "Overview",
+          "url": "/tutorials/meteor/blog/1/01"
+        },
+        {
+          "title": "Using Meteorite",
+          "url": "/tutorials/meteor/blog/1/02"
+        },
+        {
+          "title": "Structuring Code",
+          "url": "/tutorials/meteor/blog/1/03"
+        },
+        {
+          "title": "Bootstrap Smart Package",
+          "url": "/tutorials/meteor/blog/1/04"
+        },
+        {
+          "title": "Router Smart Package",
+          "url": "/tutorials/meteor/blog/1/05"
+        }
+      ]
+    },
+    {
+      "title": "Storing Data",
+      "pages": [
+        {
+          "title": "Creating Collections",
+          "url": "/tutorials/meteor/blog/2/01"
+        },
+        {
+          "title": "Displaying Collections",
+          "url": "/tutorials/meteor/blog/2/02"
+        },
+        {
+          "title": "Template Helpers",
+          "url": "/tutorials/meteor/blog/2/03"
+        }
+      ]
+    },
+    {
+      "title": "Users & Accounts",
+      "pages": [
+        {
+          "title": "Using the Accounts API",
+          "url": "/tutorials/meteor/blog/3/01"
+        }
+      ]
+    }
+  ]
+}
