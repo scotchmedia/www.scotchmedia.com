@@ -42,9 +42,9 @@ export default class Home extends React.Component {
 
   render() {
     const nav = [
-      { title: 'Projects', url: '/projects' },
-      { title: 'About', url: '/about' },
-      { title: 'Design', url: '/about' },
+      { title: 'Projects', url: '/projects/' },
+      { title: 'About', url: '/about/' },
+      { title: 'Design', url: '/about/' },
     ];
     const pLinks = [
       { title: 'Title Farm', url: 'https://titlefarm.com' },

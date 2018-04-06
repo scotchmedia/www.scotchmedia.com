@@ -135,7 +135,8 @@ class TutorialDetail extends React.Component<Props, State> {
                           <Link
                             activeClassName={`${styles.toc.active}`}
                             className={styles.toc.link}
-                            to={p.url}
+                            // add a trailiing slash
+                            to={p.url + '/'}
                           >
                             {p.title}
                           </Link>
